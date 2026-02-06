@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Loader2, Zap, AlertTriangle, Compass, Quote, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Loader2, Zap, AlertTriangle, Compass, Quote, ArrowRight } from 'lucide-react';
 
 const Analyzer = () => {
   const [thought, setThought] = useState('');
@@ -16,11 +16,12 @@ const Analyzer = () => {
     setResult(null);
 
     try {
-      // PROD URL jab deploy karoge, abhi localhost
-      const response = await axios.post('http://localhost:3000/analyze-thought', { thought });
+      // UPDATED: Ab ye Live Server se connect karega
+      const response = await axios.post('https://day40-thinkwellai.onrender.com/analyze-thought', { thought });
       setResult(response.data);
     } catch (err) {
-      setError('Server is busy thinking hard. Please try again.');
+      console.error(err);
+      setError('Server is busy or starting up (Free tier takes 50s). Please try again.');
     } finally {
       setLoading(false);
     }
@@ -62,7 +63,7 @@ const Analyzer = () => {
               {loading ? <Loader2 className="animate-spin w-6 h-6" /> : <>Run Simulation <ArrowRight className="w-5 h-5" /></>}
             </button>
           </div>
-          {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
+          {error && <p className="text-red-500 mt-4 text-center font-medium">{error}</p>}
         </motion.div>
 
         {/* RESULTS SECTION */}
@@ -126,7 +127,6 @@ const Analyzer = () => {
                 </div>
                 
                 <div className="p-8 md:p-10 space-y-6">
-                  {/* DATA MAPPING FIX: Checking for action_plan specifically */}
                   {result.action_plan && result.action_plan.length > 0 ? (
                     result.action_plan.map((step, i) => (
                       <div key={i} className="flex gap-6 group">
