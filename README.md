@@ -1,10 +1,10 @@
-# DAY 40 : 45 Days Coding Challenge [ Thinkwell AI 🧠] 
+# DAY 40 : 45 Days Coding Challenge     [ Thinkwell AI 🧠] 
 
 **Live Demo:** [https://day40-thinkwell-ai.vercel.app/](https://day40-thinkwell-ai.vercel.app/)
 
 > *"Turn thoughts into clarity."*
 
-Thinkwell AI is a premium, SaaS-style web application designed to help users analyze complex thoughts, strategies, and decisions. Unlike standard chatbots, Thinkwell acts as a strategic consultant, deconstructing user inputs to identify hidden assumptions, critical risks, and providing a structured execution plan.
+Thinkwell AI is a premium,a SaaS-style web application designed to help users analyze complex thoughts, strategies, and decisions. Unlike standard chatbots, Thinkwell acts as a strategic consultant, deconstructing user inputs to identify hidden assumptions, critical risks, and providing a structured execution plan.
 
 ---
 
